@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+    <link rel="stylesheet" href="/css/B2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <table id="menu">
+            <tr>
+                <td colspan="3">
+                    <h3>THỰC ĐƠN</h3>
+                </td>
+            </tr>
+            <tr class="heading">
+                <td>Thức ăn</td>
+                <td>Nước uống</td>
+                <td>Thời điểm</td>
+            </tr>
+            <tr>
+                <td>
+                    <select name="food" id="food" multiple>
+                        <option value="20000">Bún bò</option>
+                        <option value="18000">Hủ tiếu</option>
+                        <option value="17000">Bánh canh</option>
+                        <option value="19000">Phở bò</option>
+                        <option value="15000">Nuôi</option>
+                        <option value="12000">Bánh mì thịt</option>
+                        <option value="15000">Bánh cuốn</option>
+                    </select>
+                </td>
+                <td>
+                    <select name="drink" id="drink" multiple>
+                        <option value="12000">Cafe đá</option>
+                        <option value="15000">Cafe sữa</option>
+                        <option value="13000">Chanh dây</option>
+                        <option value="12000">Chanh muối</option>
+                        <option value="14000">Xí muội</option>
+                        <option value="13000">Sữa tươi</option>
+                        <option value="17000">Cam vắt</option>
+                    </select>
+                </td>
+                <td class="time">
+                    <input type="radio" name="day" id="morning" value="1"> Ban ngày <br>
+                    <input type="radio" name="day" id="dinner" value="2"> Ban đêm <br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="submit" id="btn-calc" value="Tính tiền">
+                </td>
+                </td>
+            </tr>
+        </table>
+        <table id="invoice">
+            <tr>
+                <th>Các món đã dùng</th>
+                <th>Tiền</th>
+            </tr>
+            <tr>
+                <td>Tổng tiền</td>
+                <td class="total"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    $("#btn-calc").click(function () {
+        $("#invoice #item").remove();
+        const day = $("input[name = day]:checked").val();
+        const food = $("#food option:selected");
+        const drink = $("#drink option:selected");
+        const table = $("#invoice");
+        let totalMoney = 0;
+        // table.append("<tr><td>Tổng tiền</td>" + "<td>" + totalMoney + " đ</td></tr>");
+        food.each(function (index) {
+            let str = "<tr id = \"item\"><td>" + $(this).text() + "</td>";
+            str += "<td>" + $(this).val() + "</td></tr>";
+            totalMoney += Number($(this).val());
+            table.append(str);
+        });
+
+        drink.each(function (index) {
+            let str = "<tr id = \"item\"><td>" + $(this).text() + "</td>";
+            str += "<td>" + $(this).val() + "</td></tr>";
+            totalMoney += Number($(this).val());
+            table.append(str);
+        });
+
+        table.find("tr").each(function (index) {
+            if (index>1) {
+                totalMoney += Number();
+            }
+        });
+        if (day == 2) {
+            totalMoney = totalMoney + totalMoney * 0.1;
+        }
+        if (day != 1 && day != 2) {
+            alert("Vui lòng chọn thời điểm");
+            return;
+        }
+        $('.total').text(totalMoney);
+        table.show();
+    });
+</script>
+
+</html>

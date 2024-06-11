@@ -1,0 +1,44 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#menu {
+    text-align: center;
+    background-color: #c3ff00;
+}
+
+table,
+td,
+th {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.heading {
+    color: blue;
+}
+
+.time {
+    width: 200px;
+}
+
+#btn-calc {
+    border-width: 1px;
+    border-radius: 5px;
+    background-image: linear-gradient(#f7f8fa ,#e7e9ec);
+}
+
+#invoice {
+    text-align: center;
+    background-color: cyan;
+    color: blue;
+    display: none;
+}

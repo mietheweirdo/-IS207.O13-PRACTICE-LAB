@@ -1,0 +1,141 @@
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    display: flex;
+}
+
+#search button {
+    display: flex;
+    margin-left: -1px;
+    border-radius: 0 3px 3px 0;
+    border-width: 1px;
+    cursor: pointer;
+    padding: 15px;
+    align-items: center;
+
+}
+
+#search input {
+    border-radius: 3px 0 0 3px;
+    border-width: 1px;
+
+}
+
+button,
+input {
+    height: 35px;
+}
+
+h2 {
+    margin: 0px;
+    font-weight: lighter;
+    color: #666;
+    padding-bottom: 5px;
+}
+
+.title {
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+form {
+    padding: 10px;
+}
+
+
+i{
+    padding-right: 10px;
+}
+
+/* define a fixed width for the entire menu */
+.navigation {
+    width: 250px;
+    background-color: #e5e5e5;    
+}
+
+.items {
+    border: #c7c7c7;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/* reset our lists to remove bullet points and padding */
+.mainmenu,
+.submenu,
+.submenu2 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* make ALL links (main and submenu) have padding and background color */
+.mainmenu a {
+    display: block;
+    background-color: #e5e5e5;
+    text-decoration: none;
+    padding: 10px;
+    color: #000;
+}
+
+.submenu {
+    display: grid;
+}
+
+
+.submenu i{
+    justify-self: self-end;}
+/* add hover behaviour */
+.mainmenu a:hover {
+    background-color: #C5C5C5;
+}
+
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  we're changing the submenu's max-height from 0 to 200px;
+*/
+
+.mainmenu li:hover .submenu {
+    display: block;
+    max-height: 200px;
+}
+
+.mainmenu .submenu li:hover .submenu2 {
+    display: block;
+    max-height: 200px;
+}
+
+/*
+  we now overwrite the background-color for .submenu links only.
+  CSS reads down the page, so code at the bottom will overwrite the code at the top.
+*/
+
+.submenu a {
+    background-color: #dad6d6;
+}
+
+/* hover behaviour for links inside .submenu */
+.submenu a:hover {
+    background-color: #666;
+}
+
+/* this is the initial state of all submenus.
+  we set it to max-height: 0, and hide the overflowed content.
+*/
+.submenu {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.5s ease-out;
+}
+
+.submenu2 {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.5s ease-out;
+}
+
+.submenu li {
+    padding-left: 15px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+    <link rel="stylesheet" href="/css/B1.css">
+</head>
+
+<body>
+    <div class="table-b1">
+        <table>
+            <tr>
+                <td>Lương</td>
+                <td><input type="text" id="salary"></td>
+            </tr>
+            <tr>
+                <td>Hệ số lương</td>
+                <td><input type="number" id="salaryindex" value="3.2" min="0" max="10" step="1"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" id="calc-salary" value="Tính lương tháng"></td>
+            </tr>
+            <tr>
+                <td>Lương tháng</td>
+                <td><text id="total"></text></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.getElementById("calc-salary").addEventListener("click", () => {
+            const salary = document.getElementById("salary").value;
+            const salaryindex = document.getElementById("salaryindex").value;
+            let total = salary * salaryindex;
+            if (isNaN(total) || total < 0) {
+                alert("Nhập sai định dạng. Vui lòng nhập lại");
+            }
+            else {
+                document.getElementById("total").innerHTML = total;
+            }
+        }
+        )
+    </script>
+</body>
+
+</html>

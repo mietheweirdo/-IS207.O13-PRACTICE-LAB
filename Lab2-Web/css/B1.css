@@ -1,0 +1,17 @@
+table {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #FFEDCA;
+    border: 2px solid rgb(82, 82, 250);
+}
+
+td, tr {
+    border: 2px solid rgb(82, 82, 250);
+}
+
+#calc-salary {
+    border-radius: 5px;
+    background-image: linear-gradient(#f7f8fa ,#e7e9ec);
+}

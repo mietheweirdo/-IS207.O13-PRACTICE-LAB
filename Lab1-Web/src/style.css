@@ -1,0 +1,40 @@
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+/*Để text ở phía dưới ảnh*/
+/* .img-text {
+  display: flex;
+} */
+
+/*Để text ở phía bên trái ảnh*/
+/* .img-text {
+  display: flex;
+  flex-direction:row;
+} */
+
+/*Để text ở phía bên phải ảnh*/
+/* .img-text {
+  display: flex;
+  flex-direction:row-reverse;
+} */
+
+/*Để text ở phía bên trên ảnh*/
+/* .img-text {
+  display: flex;
+  flex-direction:column-reverse;
+}  */
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.text {
+  font-size: 20px;
+  /* bỏ comment để text được căn ở giữa*/
+  /* align-self: center; */
+}
